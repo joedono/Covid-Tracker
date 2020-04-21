@@ -1,0 +1,31 @@
+export interface StateCurrent {
+  state: string;
+  positive: number;
+  positiveScore?: number;
+  negativeScore?: number;
+  negativeRegularScore?: number;
+  commercialScore?: number;
+  grade?: string;
+  score?: number;
+  negative: number;
+  pending?: number;
+  hospitalizedCurrently?: number;
+  hospitalizedCumulative?: number;
+  inIcuCurrently?: number;
+  inIcuCumulative?: number;
+  onVentilatorCurrently?: number;
+  onVentilatorCumulative?: number;
+  recovered?: number;
+  lastUpdateEt: string;
+  checkTimeEt: string;
+  death?: number;
+  hospitalized?: number;
+  total: number;
+  totalTestResults: number;
+  posNeg: number;
+  fips: string;
+  dateModified: string;
+  dateChecked: string;
+  notes: string;
+  hash: string;
+}
