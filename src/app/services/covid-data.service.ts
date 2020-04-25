@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Country } from '../models/country';
 import { Press } from '../models/press';
 import { StateCurrent } from '../models/state-current';
 import { StateDaily } from '../models/state-daily';
@@ -69,8 +68,14 @@ export class CovidDataService {
     return this.http.get<UnitedStatesDaily[]>(url);
   }
 
+  public getTrackerURLs(): Observable<TrackerUrl[]> {
+    const url = BASE_URL + '/urls.json';
+    return this.http.get<UnitedStatesDaily[]>(url);
+  }
+
+  public getPress(): Observable<Press[]> {
+    const url = BASE_URL + '/press.json';
+    return this.http.get<Press[]>(url);
+  }
+
 }
-    Counties- /api/v1/counties.json | CSV
-    Tracker URLs - /api/v1/urls.json
-    State Website Screenshots - /api/v1/states/screenshots.json
-    In the press - /api/v1/press.json
