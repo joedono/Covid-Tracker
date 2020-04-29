@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StateGraphComponent } from './state-graph/state-graph.component';
@@ -14,7 +15,8 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
     NewsFeedComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
