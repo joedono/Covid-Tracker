@@ -67,7 +67,7 @@ export class CovidDataService {
   }
 
   public getUSDaily(): Observable<UnitedStatesDaily[]> {
-    const url = this.BASE_URL + '/us/current.json';
+    const url = this.BASE_URL + '/us/daily.json';
     return this.http.get<UnitedStatesDaily[]>(url);
   }
 
