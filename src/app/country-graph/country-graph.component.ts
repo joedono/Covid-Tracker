@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CovidDataService } from '../services/covid-data.service';
 
 @Component({
   selector: 'app-country-graph',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryGraphComponent implements OnInit {
 
-  constructor() { }
+  constructor(private covidDataService: CovidDataService) { }
 
   ngOnInit(): void {
   }

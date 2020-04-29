@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import * as moment from 'moment';
 
 import { Press } from '../models/press';
 import { StateCurrent } from '../models/state-current';
@@ -19,7 +22,7 @@ export class CovidDataService {
     protected http: HttpClient
   ) { }
 
-  public getStateDate(state: string, date Date): Observable<StateCurrent[]> {
+  public getStateDate(state: string, date: Date): Observable<StateCurrent[]> {
     let strDate = 'current.json';
 
     if (state) {
@@ -27,10 +30,10 @@ export class CovidDataService {
     }
 
     if (date) {
-      strDate = date.toString('yyyymmdd') + '.json';
+      strDate = moment(date).format('YYYYMMDD') + '.json';
     }
 
-    const url = BASE_URL + '/states/' + state + strDate;
+    const url = this.BASE_URL + '/states/' + state + strDate;
     return this.http.get<StateCurrent[]>(url);
   }
 
@@ -39,7 +42,7 @@ export class CovidDataService {
       state += '/';
     }
 
-    const url = BASE_URL + '/states/' + state + 'daily.json';
+    const url = this.BASE_URL + '/states/' + state + 'daily.json';
     return this.http.get<StateDaily[]>(url);
   }
 
@@ -48,33 +51,33 @@ export class CovidDataService {
       state += '/';
     }
 
-    const url = BASE_URL + '/states/' + state + 'info.json';
+    const url = this.BASE_URL + '/states/' + state + 'info.json';
     return this.http.get<StateInfo[]>(url);
   }
 
   public getUSDate(date: Date): Observable<UnitedStatesCurrent[]> {
-    clet strDate = 'current.json';
+    let strDate = 'current.json';
 
     if (date) {
-      strDate = date.toString('yyyymmdd') + '.json';
+      strDate = moment(date).format('YYYYMMDD') + '.json';
     }
 
-    const url = BASE_URL + '/us/' + strDate;
+    const url = this.BASE_URL + '/us/' + strDate;
     return this.http.get<UnitedStatesCurrent[]>(url);
   }
 
   public getUSDaily(): Observable<UnitedStatesDaily[]> {
-    const url = BASE_URL + '/us/current.json';
+    const url = this.BASE_URL + '/us/current.json';
     return this.http.get<UnitedStatesDaily[]>(url);
   }
 
   public getTrackerURLs(): Observable<TrackerUrl[]> {
-    const url = BASE_URL + '/urls.json';
-    return this.http.get<UnitedStatesDaily[]>(url);
+    const url = this.BASE_URL + '/urls.json';
+    return this.http.get<TrackerUrl[]>(url);
   }
 
   public getPress(): Observable<Press[]> {
-    const url = BASE_URL + '/press.json';
+    const url = this.BASE_URL + '/press.json';
     return this.http.get<Press[]>(url);
   }
 

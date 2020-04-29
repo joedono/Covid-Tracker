@@ -1,4 +1,4 @@
-interface UnitedStatesDaily {
+export interface UnitedStatesDaily {
   date: number;
   states: number;
   positive: number;
