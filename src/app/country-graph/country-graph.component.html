@@ -1,5 +1,6 @@
-<div class="container">
-  <div class="graph-container">
+<div class="flex-row">
+  <div class="flex-cell">
+    <h1>United States Stats</h1>
     <ngx-charts-line-chart
       *ngIf="mainData"
       [legend]="legend"
@@ -14,7 +15,8 @@
       >
     </ngx-charts-line-chart>
   </div>
-  <div class="graph-container">
+  <div class="flex-cell">
+    <h1>United States Cases</h1>
     <ngx-charts-line-chart
       *ngIf="caseData"
       [legend]="legend"

@@ -1,1 +1,34 @@
-<p>state-graph works!</p>
+<div class="flex-row">
+  <div class="flex-cell">
+    <h1>New England Stats</h1>
+    <ngx-charts-line-chart
+      *ngIf="mainData"
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [timeline]="timeline"
+      [results]="mainData"
+      >
+    </ngx-charts-line-chart>
+  </div>
+  <div class="flex-cell">
+    <h1>New England Cases</h1>
+    <ngx-charts-line-chart
+      *ngIf="caseData"
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [timeline]="timeline"
+      [results]="caseData"
+      >
+    </ngx-charts-line-chart>
+  </div>
+</div>
