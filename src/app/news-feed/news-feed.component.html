@@ -1,1 +1,10 @@
 <h1>News</h1>
+<div class="news-article-container">
+  <div class="news-article-content" *ngFor="let pressArticle of pressArticles">
+    <a class="news-article-title" href="{{ pressArticle.url }}" target="_blank">
+      {{ pressArticle.title }}
+    </a>
+    <span class="news-article-date">{{ pressArticle.publishDate }}</span>
+    <span class="news-article-author">By: {{ pressArticle.author }}</span>
+  </div>
+</div>
