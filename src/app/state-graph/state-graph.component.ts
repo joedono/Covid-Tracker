@@ -27,7 +27,7 @@ export class StateGraphComponent implements OnInit, OnDestroy {
 
   // options
   public view: any[] = [700, 300];
-  public legend: boolean = true;
+  public legend: boolean = false;
   public showLabels: boolean = true;
   public animations: boolean = true;
   public xAxis: boolean = true;
@@ -169,7 +169,7 @@ export class StateGraphComponent implements OnInit, OnDestroy {
       if (data.date < 20200313) {
         continue;
       }
-      
+
       let date = moment(data.date.toString()).format("MM-DD-YYYY");
       series.push({ name: date, value: data.negative ?? 0 });
     }

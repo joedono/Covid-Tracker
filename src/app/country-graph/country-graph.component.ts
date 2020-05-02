@@ -26,7 +26,7 @@ export class CountryGraphComponent implements OnInit, OnDestroy {
 
   // options
   public view: any[] = [700, 300];
-  public legend: boolean = true;
+  public legend: boolean = false;
   public showLabels: boolean = true;
   public animations: boolean = true;
   public xAxis: boolean = true;

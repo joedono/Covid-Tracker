@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-sm-6">
-    <h1>United States Stats</h1>
+  <div class="col-sm-6 graph-container">
+    <h1>US Stats</h1>
     <ngx-charts-line-chart
       *ngIf="mainData"
       [legend]="legend"
@@ -15,8 +15,8 @@
       >
     </ngx-charts-line-chart>
   </div>
-  <div class="col-sm-6">
-    <h1>United States Cases</h1>
+  <div class="col-sm-6 graph-container">
+    <h1>US Cases</h1>
     <ngx-charts-line-chart
       *ngIf="caseData"
       [legend]="legend"
