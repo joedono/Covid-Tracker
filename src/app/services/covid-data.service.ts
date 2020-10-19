@@ -16,7 +16,7 @@ import { UnitedStatesDaily } from '../models/us-daily';
   providedIn: 'root'
 })
 export class CovidDataService {
-  private readonly BASE_URL = "https://covidtracking.com/api/v1";
+  private readonly BASE_URL = "https://api.covidtracking.com/v1";
 
   constructor(
     protected http: HttpClient
